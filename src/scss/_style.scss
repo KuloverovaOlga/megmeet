@@ -1,0 +1,50 @@
+@import './mixins';
+
+$black: #191817;
+$green: #00a499;
+$white: #ffffff;
+$gray: #DADADC;
+$gray-text: #AEAEAE;
+$background: #EEEEF0;
+
+// body
+body {
+  background-color: $background;
+  color: $black;
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+// main
+main {
+  flex-grow: 1;
+}
+
+.desktop {
+  display: block;
+
+  @media (max-width: 48em) {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @media (max-width: 48em) {
+    display: block;
+  }
+}
+
+@import './ui/ui';
