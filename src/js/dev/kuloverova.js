@@ -10,7 +10,8 @@ import { rem } from '../utils/constants';
 import popup from '../utils/popup';
 import form from '../utils/form';
 import burgerMenu from '../components/burger';
-import header from '../components/header';
+import {headerScroll,headerDropdown} from '../components/header';
+import {scroll} from '../utils/scroll';
 
 export const modules = {};
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,10 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
     form();
   } catch {}
   try {
-    header();
+    headerScroll();
+  } catch {}
+  try {
+    headerDropdown();
   } catch {}
   try {
     burgerMenu();
+  } catch {}
+  try {
+    scroll();
   } catch {}
 });
 

@@ -111,7 +111,7 @@ export let formValidate = {
       }
     } else if (formRequiredItem.dataset.required === 'tel') {
       // formRequiredItem.value = formRequiredItem.value.replace(/[^0-9]/g, ''); // Оставить только цифры и символы +()
-      if (!/^\+ \d{1,2} \(  \d{3}  \)  \d{3}  -  \d{2}  -  \d{2}$/.test(formRequiredItem.value)) {
+      if (!/^\+\d{1} \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(formRequiredItem.value)) {
 
         this.addError(formRequiredItem);
         error++;
@@ -135,6 +135,13 @@ export let formValidate = {
       }
     } else if (formRequiredItem.dataset.required === 'file') {
       if (formRequiredItem.files.length === 0) {
+        this.addError(formRequiredItem);
+        error++;
+      } else {
+        this.removeError(formRequiredItem);
+      }
+    } else if (formRequiredItem.dataset.required === 'name') {
+      if (!/^[a-zA-Zа-яА-Я\s\-]+$/.test(formRequiredItem.value)) {
         this.addError(formRequiredItem);
         error++;
       } else {
