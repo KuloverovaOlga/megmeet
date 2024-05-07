@@ -16,3 +16,25 @@
     clip-path: polygon(8% 0%, 92% 0%, 100% 30%, 100% 70%, 92% 100%, 8% 100%, 0% 70%, 0% 30%);
   }
 }
+
+.swiper-navigation {
+  display: flex;
+  column-gap: 2.4rem;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    background-color: #fff;
+
+    & > * {
+      pointer-events: none;
+    }
+
+    svg {
+      width: 4rem;
+    }
+  }
+}
