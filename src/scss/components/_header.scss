@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   transition: background 0.3s, backdrop-filter 0.1s;
-  z-index: 500;
+  z-index: 200;
   // .header__inner
   &.fixed-nav {
     backdrop-filter: blur(44px);
@@ -87,7 +87,7 @@
   &__nav-list {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
     justify-content: center;
     @include small-tablet {
       flex-direction: column;
@@ -108,7 +108,7 @@
 
   &__nav-link {
     display: block;
-    padding: 6rem 0;
+    padding: 6rem 1rem;
     text-transform: uppercase;
     transition: color 0.3s;
     &:hover {
