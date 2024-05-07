@@ -31,14 +31,14 @@ main {
   flex-grow: 1;
 
   section {
-    padding: 20rem 0 0;
+    margin: 20rem 0 0;
     @include small-tablet {
-      padding: 22rem 0 0 ;
+      margin: 22rem 0 0 ;
     }
     &._first {
-      padding: 16.4rem 0 0rem;
+      margin: 16.4rem 0 0rem;
       @include small-tablet {
-        padding: 21.4rem 0 0rem;
+        margin: 21.4rem 0 0rem;
       }
     }
   }

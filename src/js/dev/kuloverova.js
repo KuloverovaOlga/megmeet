@@ -12,6 +12,7 @@ import form from '../utils/form';
 import burgerMenu from '../components/burger';
 import {headerScroll,headerDropdown} from '../components/header';
 import {scroll} from '../utils/scroll';
+import { whereBuy } from '../components/where_buy';
 
 export const modules = {};
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch {}
   try {
     scroll();
+  } catch {}
+  try {
+    whereBuy();
   } catch {}
 });
 

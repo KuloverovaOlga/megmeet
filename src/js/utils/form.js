@@ -185,7 +185,6 @@ const form = () => {
 
   function setupFormListener(formSelector, submitButtonSelector) {
     const form = document.querySelector(formSelector);
-    console.log(form);
     const submitButton = document.querySelector(submitButtonSelector);
 
     const formElements = form.querySelectorAll('input[data-required], textarea[data-required]');
