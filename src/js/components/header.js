@@ -1,4 +1,4 @@
-function header() {
+export function headerScroll() {
     const nav = document.querySelector('.header');
     const navOffsetTop = nav.offsetTop;
   
@@ -26,7 +26,9 @@ function header() {
   
     // Инициализируем обработчик скролла при загрузке страницы
     handleResize();
-  
+}
+
+ export function headerDropdown () {
     const dropdowns = document.querySelectorAll('.dropdown');
   
     dropdowns.forEach((dropdown) => {
@@ -43,4 +45,3 @@ function header() {
     });
   }
 
-  export default header
