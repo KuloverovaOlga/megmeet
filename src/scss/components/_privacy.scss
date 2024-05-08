@@ -1,0 +1,18 @@
+.privacy {
+  &__container {
+    max-width: 110.6rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+  }
+
+  &__text {
+    p {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

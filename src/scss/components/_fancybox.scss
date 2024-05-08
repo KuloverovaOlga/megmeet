@@ -1,0 +1,61 @@
+.fancybox {
+  &__backdrop {
+    background-color: rgba($color: $gray, $alpha: 0.5);
+  }
+
+  &__toolbar__column {
+    .f-button {
+      position: absolute;
+      right: 12.7rem;
+      top: 4.4rem;
+      width: 3.2rem;
+      height: 3.2rem;
+      color: $black;
+      background: transparent;
+
+      &:hover {
+        background: transparent;
+        color: $black;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__nav {
+    .f-button {
+      &.is-next,
+      &.is-prev {
+        color: $black;
+        box-shadow: none;
+        width: 8rem;
+        height: 8rem;
+        background: $white;
+        border-radius: 0;
+
+        &::before {
+          display: none;
+        }
+
+        svg {
+          width: 4rem;
+          width: auto;
+          height: auto;
+          stroke-width: 1px;
+          stroke: none;
+        }
+      }
+
+      &.is-next {
+        --f-button-next-pos: 12rem;
+      }
+
+      &.is-prev {
+        --f-button-prev-pos: 12rem;
+      }
+    }
+  }
+}
