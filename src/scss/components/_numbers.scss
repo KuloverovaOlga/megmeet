@@ -1,5 +1,7 @@
 .numbers {
   // margin-bottom: 20rem;
+  margin: 0;
+  padding: 20rem 0 0;
 
   &:first-child {
     padding-top: 20rem;
@@ -59,7 +61,8 @@
 
   @media (max-width: 48em) {
     // margin-bottom: 22rem;
-
+    margin: 0;
+    padding: 22rem 0 0;
     &:first-child {
       padding-top: 22rem;
     }
