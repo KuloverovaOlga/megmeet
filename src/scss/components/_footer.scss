@@ -69,8 +69,15 @@
 
   &__logo-link {
     color: $gray-text;
+    border-bottom: 0.2rem solid transparent;
+    width: fit-content;
     @include small-tablet {
       font-size: 3.2rem;
+    }
+    transition: border 0.3s, color 0.3s;
+    &:hover {
+      color: $black;
+      border-bottom: 0.2rem solid $black;
     }
   }
 

@@ -1,10 +1,17 @@
-<section class="application">
+<section class="application application--demo">
   <div class="container">
     <div class="application__inner-wrapper">
       <div class="application__inner">
-        <p class="application__title tl1"><span>оставьте заявку</span></p>
         <div class="application__form-wrapper">
-          <form data-popup-message="#popup__success" data-dev action="" class="application__form">
+          <p class="application__title tl1">
+            <span>Запишитесь <br class="desktop" />на демонстрацию </span>
+          </p>
+          <form
+            data-popup-message="#popup__success"
+            data-dev
+            action=""
+            class="application__form application__demo-form"
+          >
             <p class="application__form-title txt20">
               <span> Наши менеджеры помогут подобрать оборудование под Ваши задачи</span>
             </p>
@@ -48,7 +55,7 @@
                       name="form[]"
                       placeholder="Название компании"
                     />
-                    <!-- <span class="placeholder">Имя<span>*</span></span> -->
+               
                   </span>
                   <span class="error-span">Данное значение должно состоять из букв</span>
                 </label>
@@ -62,7 +69,7 @@
                       name="form[]"
                       placeholder="E-mail"
                     />
-                    <!-- <span class="placeholder">Имя<span>*</span></span> -->
+               
                   </span>
                   <span class="error-span">Данное значение должно состоять из букв</span>
                 </label>
@@ -83,15 +90,16 @@
                   Нажимая на кнопку, Вы принимаете
                   <a href="#">условия пользовательского соглашения</a>
                 </p>
-                <button type="submit" class="application__btn button txt18 txt18_bold">
+                <button type="submit" class="application__btn application__demo-btn button txt18 txt18_bold">
                   оставить заявку
                 </button>
               </div>
             </div>
           </form>
-          <div class="application__form-img-box">
-            <img src="./assets/images/application-img.webp" alt="" />
-          </div>
+        </div>
+
+        <div class="application__form-img-box">
+          <img src="./assets/images/application-demo.webp" alt="" />
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ const form = () => {
   phoneMask();
   dateMask();
   telValidate();
+  mailValidate();
   inputPlaceholder();
   inputFile();
 
@@ -78,18 +79,36 @@ const form = () => {
         const parent = item.parentElement.parentElement;
 
         if (!/^\+\d{1} \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(inputValue) && inputValue != '') {
-          span.classList.add('active');
+          // span.classList.add('active');
           parent.classList.add('_form-error');
         } else if (inputValue.length < 16) {
           parent.classList.add('_form-error');
         } else {
-          span.classList.remove('active');
+          // span.classList.remove('active');
           parent.classList.remove('_form-error');
         }
       });
     });
   }
+  function mailValidate() {
+    const mail = document.querySelectorAll('.input--mail');
 
+    mail.forEach((item) => {
+      item.addEventListener('input', () => {
+        const inputValue = item.value.trim();
+        const span = item.parentElement.nextElementSibling;
+        const parent = item.parentElement.parentElement;
+
+        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(inputValue) && inputValue != '') {
+          // span.classList.add('active');
+          parent.classList.add('_form-error');
+        } else {
+          // span.classList.remove('active');
+          parent.classList.remove('_form-error');
+        }
+      });
+    });
+  }
   function inputFile() {
     function formatFileSize(bytes) {
       if (bytes < 1024) return bytes + ' b';
@@ -110,7 +129,8 @@ const form = () => {
           arr.map((x) => {
             if (x.name == main) {
               files.forEach((i) => {
-                if (i.size < 20 * 1024 * 1024) { // Проверка размера файла
+                if (i.size < 20 * 1024 * 1024) {
+                  // Проверка размера файла
                   x.file.push(i);
                 }
               });
@@ -119,7 +139,8 @@ const form = () => {
         } else {
           let asd = [];
           files.forEach((i) => {
-            if (i.size < 20 * 1024 * 1024) { // Проверка размера файла
+            if (i.size < 20 * 1024 * 1024) {
+              // Проверка размера файла
               asd.push(i);
             }
           });
@@ -130,7 +151,8 @@ const form = () => {
         }
         console.log(arr);
         $.each(files, function (index, file) {
-          if (file.size < 20 * 1024 * 1024) { // Проверка на вес меньше 20 МБ
+          if (file.size < 20 * 1024 * 1024) {
+            // Проверка на вес меньше 20 МБ
             filesItems.append(
               `<div class="popup__form-files-item form-files-item">
                     <a target="_blank" href="${window.URL.createObjectURL(file)}">  
@@ -146,7 +168,7 @@ const form = () => {
                </div>`
             );
           } else {
-            alert('Вес файла превышает 20mb')
+            alert('Вес файла превышает 20mb');
           }
         });
       }
@@ -182,7 +204,6 @@ const form = () => {
       $(this).parent().remove();
     });
   }
-
   function setupFormListener(formSelector, submitButtonSelector) {
     const form = document.querySelector(formSelector);
     const submitButton = document.querySelector(submitButtonSelector);
@@ -219,7 +240,11 @@ const form = () => {
   }
 
   setupFormListener('.application__form', '.application__btn');
+  setupFormListener('.application__summary-form', '.application__summary-btn');
+  setupFormListener('.application__demo-form', '.application__demo-btn');
   setupFormListener('.popup__form--application', '.popup__btn--application');
+  setupFormListener('.popup__form--choice', '.popup__btn--choice');
+  setupFormListener('.popup__form--demo', '.popup__btn--demo');
   setupFormListener('.popup__form--summary', '.popup__btn--summary');
 };
 

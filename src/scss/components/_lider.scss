@@ -22,11 +22,18 @@
     max-width: 108rem;
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__title {
     margin-bottom: 3.2rem;
     text-transform: uppercase;
+  }
+
+  &__text {
+    width: 82.2rem;
   }
 
   @media (max-width: 48em) {
@@ -43,6 +50,7 @@
     &__text {
       font-size: 3.2rem;
       line-height: 4.4rem;
+      width: 100%;
     }
   }
 }
