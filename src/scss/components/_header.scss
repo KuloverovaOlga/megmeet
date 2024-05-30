@@ -20,7 +20,7 @@
     justify-content: space-between;
     position: relative;
     @include small-tablet {
-      padding: 2.5rem 0;
+      padding: 3.1rem 0;
     }
   }
 
@@ -57,12 +57,12 @@
     @include small-tablet {
       position: fixed;
       inset: 0;
-      top: 14rem;
+      top: 16rem;
       width: 100%;
-      height: calc(100% - 14rem);
+      height: calc(100% - 16rem);
       background-color: $background;
       z-index: -1;
-      padding: 4rem 2rem;
+      padding: 3.2rem 2rem 4.4rem;
       overflow-y: auto;
       overflow-x: hidden;
       align-items: flex-start;
@@ -72,6 +72,9 @@
       transition: transform 0.5s;
       &.active {
         transform: translateX(0);
+      }
+      &.overflow {
+        overflow-y: hidden;
       }
     }
   }
@@ -99,8 +102,11 @@
   // .header__nav-item
 
   &__nav-item {
-    &.active .header__nav-link{
-        color: $green;
+    &.active .header__nav-link {
+      color: $green;
+      @include small-tablet {
+        color: $black;
+      }
     }
   }
 
@@ -113,6 +119,22 @@
     transition: color 0.3s;
     &:hover {
       color: $green;
+      @include small-tablet {
+        color: $black;
+      }
+    }
+    &--mob-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      & .header__nav-link-svg-box {
+        display: none;
+        @include small-tablet {
+          display: block;
+          width: 8.2rem;
+          height: 0.8rem;
+        }
+      }
     }
     @include small-tablet {
       font-size: 3.6rem;
@@ -132,7 +154,27 @@
     display: none;
 
     @include small-tablet {
-      display: none;
+      // display: none;
+      display: flex !important;
+      flex-direction: column;
+      position: fixed;
+      z-index: 500;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      transform: translateY(0);
+      transform: translate(100%, 0);
+      transition: transform 0.5s;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: $background;
+      
+    }
+    &.active {
+      @include small-tablet {
+        transform: translate(0, 0);
+        display: flex !important;
+    }
     }
   }
   &__nav-item-dropdown-inner {
@@ -142,7 +184,54 @@
     justify-content: space-between;
     gap: 1rem;
     margin-top: 6rem;
+    @include small-tablet {
+      background-color: $background;
+      margin-top: 0;
+      height: fit-content;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 6.4rem;
+      padding: 2rem;
+      justify-content: flex-start;
+    }
+  }
 
+  // .header__nav-item-dropdown-back
+
+  &__nav-item-dropdown-back {
+    display: none;
+    @include small-tablet {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+    }
+  }
+
+  // .header__nav-item-dropdown-back-svg-box
+
+  &__nav-item-dropdown-back-svg-box {
+    @include small-tablet {
+      width: 6.4rem;
+      height: 3.2rem;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // .header__nav-item-dropdown-back-text
+
+  &__nav-item-dropdown-back-text {
+    @include small-tablet {
+      font-weight: 600;
+      font-size: 3.2rem;
+      text-transform: uppercase;
+      color: $green;
+      font-family: 'OpenSans';
+    }
   }
 
   // .header__nav-item-list-box
@@ -150,6 +239,11 @@
   &__nav-item-list-box {
     display: flex;
     gap: 2rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 4.8rem;
+      padding-bottom: 9.2rem;
+    }
   }
 
   // .header__nav-item-list
@@ -160,6 +254,10 @@
     gap: 2.4rem;
     width: 39.2rem;
     flex-shrink: 0;
+    @include small-tablet {
+      width: 100%;
+      gap: 4.8rem;
+    }
   }
 
   // .header__nav-item-item
@@ -173,6 +271,14 @@
     transition: color 0.3s;
     &:hover {
       color: $green;
+      @include small-tablet {
+        color: $black;
+      }
+    }
+    @include small-tablet {
+      font-weight: 400;
+      font-size: 3.2rem;
+      line-height: 140%;
     }
   }
 
@@ -185,6 +291,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    @include small-tablet {
+      display: none;
     }
   }
 
@@ -233,8 +342,8 @@
 
   &__social-svg-box {
     @include small-tablet {
-      width: 4.8rem;
-      height: 4.8rem;
+      width: 6.4rem;
+      height: 6.4rem;
       & svg {
         width: 100%;
         height: 100%;
@@ -269,7 +378,7 @@
     @include small-tablet {
       display: flex;
       align-items: center;
-      gap: 2.4rem;
+      gap: 6.4rem;
     }
   }
 

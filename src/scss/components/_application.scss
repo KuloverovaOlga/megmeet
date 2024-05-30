@@ -4,7 +4,7 @@
     overflow: hidden;
     display: flex;
     @include small-tablet {
-      width: 100%;
+      width: 100% !important;
     }
   }
   &__inner {
@@ -160,11 +160,81 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      @include small-tablet {
+        width: 100% !important;
+      }
     }
     @include small-tablet {
       transform: unset;
       width: 59.2rem;
       height: 43.4rem;
+    }
+  }
+
+  &--demo {
+    .application__inner-wrapper {
+    }
+    .application__inner {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+      @include small-tablet {
+        flex-direction: column;
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 85% 100%, 15% 100%, 0% 95%);
+        -moz-clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 85% 100%, 15% 100%, 0% 95%);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 85% 100%, 15% 100%, 0% 95%);
+      }
+    }
+    .application__form-wrapper {
+      flex-direction: column;
+      padding: 4rem;
+      align-items: flex-start;
+      gap: 4rem;
+      @include small-tablet {
+        padding-bottom: 6.4rem;
+      }
+    }
+    .application__title {
+    }
+    .application__form {
+    }
+    .application__demo-form {
+    }
+    .application__form-title {
+    }
+    .application__form-input-wrapper {
+    }
+    .application__form-input-box {
+    }
+    .application__label {
+    }
+    .application__form-input {
+    }
+    .application__label--textarea {
+    }
+    .application__btn-row {
+    }
+    .application__agreement-text {
+    }
+    .application__btn {
+    }
+    .application__form-img-box {
+      transform: unset;
+      width: 67.7rem;
+      height: 100%;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include small-tablet {
+          width: 100% !important;
+        }
+      }
+      @include small-tablet {
+        width: 71rem;
+        height: 59.8rem;
+      }
     }
   }
 }

@@ -10,7 +10,10 @@ import { rem } from '../utils/constants';
 import popup from '../utils/popup';
 import form from '../utils/form';
 import burgerMenu from '../components/burger';
-import { headerScroll, headerDropdown } from '../components/header';
+import mainNews from '../components/main-news';
+
+
+import { headerScroll, headerDropdown, subMenu } from '../components/header';
 import { scroll } from '../utils/scroll';
 import { whereBuy } from '../components/where_buy';
 
@@ -34,10 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     burgerMenu();
   } catch {}
   try {
+    subMenu();
+  } catch {}
+  try {
     scroll();
   } catch {}
   try {
     whereBuy();
+  } catch {}
+  try {
+    mainNews();
   } catch {}
   try {
     if (window.innerWidth > 768) {
@@ -71,11 +80,11 @@ function animApplication() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: section,
-      start: 'top 30%',
+      start: 'top 20%',
       // start: 'top 80%',
       // end: 'bottom 0%',
       // scrub: 1,
-      pin: section,
+      // pin: section,
       // once: true,
       id: 'application'
       // markers: {
