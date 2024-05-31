@@ -11,7 +11,8 @@ import popup from '../utils/popup';
 import form from '../utils/form';
 import burgerMenu from '../components/burger';
 import mainNews from '../components/main-news';
-
+import description from '../components/description';
+import productBanner from '../components/product-banner';
 
 import { headerScroll, headerDropdown, subMenu } from '../components/header';
 import { scroll } from '../utils/scroll';
@@ -47,6 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch {}
   try {
     mainNews();
+  } catch {}
+  try {
+    description();
+  } catch {}
+  try {
+    productBanner();
   } catch {}
   try {
     if (window.innerWidth > 768) {
