@@ -80,12 +80,13 @@ function productBanner() {
       $('.product-banner__characteristic-list-box--hide').slideToggle();
     })
   );
+
+  const fixBtn = document.querySelector('.product-banner__btn');
+
   function fixbinHelp() {
-    const fixBtn = document.querySelector('.product-banner__btn');
     const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
     const docHeight = document.body.offsetHeight;
-
     const fromTop = 100;
     const fromBottom = 500;
 
@@ -99,9 +100,10 @@ function productBanner() {
       fixBtn.classList.remove('active');
     }
   }
-
-  window.addEventListener('scroll', fixbinHelp);
-  window.addEventListener('resize', fixbinHelp);
+  if (fixBtn) {
+    window.addEventListener('scroll', fixbinHelp);
+    window.addEventListener('resize', fixbinHelp);
+  }
 }
 
 export default productBanner;
