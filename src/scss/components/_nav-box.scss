@@ -4,7 +4,13 @@
       margin-top: 18.2rem;
     }
   }
-
+  &--white {
+    & .nav-box__link {
+      &_black {
+        color: $white;
+      }
+    }
+  }
   // .nav-box__list-wrap
 
   &__list-wrap {
@@ -14,11 +20,20 @@
 
   &__list {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: 0.8rem;
     @include small-tablet {
       gap: 1.6rem;
+      width: 75rem;
+      margin: 0 -2rem;
+      padding: 0 2rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar-track,
+      &::-webkit-scrollbar-thumb {
+        display: none;
+      }
     }
   }
 
@@ -40,6 +55,7 @@
     @include small-tablet {
       gap: 1.6rem;
       font-size: 3rem;
+      white-space: nowrap;
       &:not(:last-child)::after {
       }
     }

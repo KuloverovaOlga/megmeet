@@ -1,6 +1,9 @@
 .fancybox {
   &__backdrop {
     background-color: rgba($color: $gray, $alpha: 0.5);
+
+    backdrop-filter: blur(52px);
+    -webkit-backdrop-filter: blur(52px);
   }
 
   &__toolbar__column {
@@ -57,5 +60,30 @@
         --f-button-prev-pos: 12rem;
       }
     }
+  }
+}
+
+.has-html5video .fancybox__content {
+  width: 139.4rem !important;
+  height: 75.7rem !important;
+  & > .f-button.is-close-btn {
+    --f-button-color: #000;
+    --f-button-svg-width: 3.2rem;
+    --f-button-svg-height: 3.2rem;
+    --f-button-outline-color: transparent;
+  }
+  @include small-tablet {
+    width: 67rem !important;
+    height: 49.4rem !important;
+  }
+}
+
+.fancybox__html5video {
+  object-fit: cover;
+}
+
+.f-button.is-close-btn {
+  & svg {
+    fill: $black !important;
   }
 }

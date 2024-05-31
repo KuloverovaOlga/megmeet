@@ -11,6 +11,7 @@ $background: #eeeef0;
 body {
   background-color: $background;
   color: $black;
+  font-family: 'OpenSans';
 
   .lock & {
     overflow: hidden;

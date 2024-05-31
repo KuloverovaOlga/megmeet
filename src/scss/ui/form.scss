@@ -51,12 +51,8 @@
   @include small-tablet {
     height: 28rem;
   }
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  &::-webkit-scrollbar-track {
-    display: none;
-  }
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track,
   &::-webkit-scrollbar-thumb {
     display: none;
   }

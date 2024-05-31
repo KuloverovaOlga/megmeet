@@ -5,6 +5,7 @@
   right: 0;
   transition: background 0.3s, backdrop-filter 0.1s;
   z-index: 200;
+  margin-right: calc(var(--fancybox-body-margin, 0px) + var(--fancybox-scrollbar-compensate, 0px));
   // .header__inner
   &.fixed-nav {
     backdrop-filter: blur(44px);
