@@ -1,4 +1,6 @@
 .nav-box {
+  position: relative;
+  z-index: 5;
   &._first {
     @include small-tablet {
       margin-top: 18.2rem;
@@ -9,6 +11,12 @@
       &_black {
         color: $white;
       }
+    }
+  }
+  &--vacancies._first  {
+    @include small-tablet {
+      margin-top: 18.2rem;
+      margin-top: 60rem;
     }
   }
   // .nav-box__list-wrap

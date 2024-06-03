@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  transition: background 0.3s, backdrop-filter 0.1s;
+  transition: background 0.5s, backdrop-filter 0.5s;
   z-index: 200;
   margin-right: calc(var(--fancybox-body-margin, 0px) + var(--fancybox-scrollbar-compensate, 0px));
   // .header__inner
@@ -11,8 +11,72 @@
     backdrop-filter: blur(44px);
     background: rgba(218, 218, 218, 0.2);
   }
-  @include small-tablet {
-    background-color: $background;
+  &.active {
+    @include small-tablet {
+      background-color: $background;
+    }
+  }
+
+  &--white {
+    &:not(.fixed-nav) {
+      &.active {
+        @include small-tablet {
+          .header__logo-img-box {
+            svg path {
+              &:not(.points) {
+                fill: $green;
+              }
+
+              &.points {
+                fill: $white !important;
+              }
+            }
+          }
+
+          .header__burger {
+            background-color: $green;
+            & .header__burger-svg-box svg path {
+              stroke: $white;
+            }
+          }
+        }
+      }
+      .header__nav-item {
+        color: $white;
+        @include small-tablet {
+          color: $black;
+        }
+      }
+      .header__nav-item-dropdown {
+        color: $black;
+      }
+      .header__logo-img-box {
+        svg path {
+          &:not(.points) {
+            fill: $white;
+          }
+
+          &.points {
+            fill: $green !important;
+          }
+        }
+      }
+      .header__btn {
+        background-color: $white;
+        color: $green;
+        @include small-tablet {
+          background-color: $green;
+          color: $white;
+        }
+      }
+
+      .header__burger {
+        background-color: $white;
+        & .header__burger-svg-box svg path {
+          stroke: $green;
+        }
+      }
+    }
   }
 
   &__inner {
@@ -35,12 +99,16 @@
   // .header__logo-img-box
 
   &__logo-img-box {
-    width: 18.6rem;
-    height: 8.4rem;
-    & img {
+    width: 25rem;
+    height: 9rem;
+    & img,
+    & svg {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      & path {
+        transition: fill 0.5s;
+      }
     }
     @include small-tablet {
       width: 22rem;
@@ -61,6 +129,7 @@
       top: 16rem;
       width: 100%;
       height: calc(100% - 16rem);
+      min-height: calc(100vh - 30rem);
       background-color: $background;
       z-index: -1;
       padding: 3.2rem 2rem 4.4rem;
@@ -169,13 +238,12 @@
       overflow-y: auto;
       overflow-x: hidden;
       background-color: $background;
-      
     }
     &.active {
       @include small-tablet {
         transform: translate(0, 0);
         display: flex !important;
-    }
+      }
     }
   }
   &__nav-item-dropdown-inner {
@@ -407,8 +475,12 @@
       align-items: center;
       justify-content: center;
       background-color: $green;
+      transition: background-color 0.5s;
       &.active {
         & .header__burger-svg-box svg {
+          & path {
+            transition: stroke 0.5s;
+          }
           &.isActive {
             transform: scale(1);
           }
