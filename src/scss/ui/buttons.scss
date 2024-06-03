@@ -9,7 +9,7 @@
   -moz-clip-path: polygon(8% 0%, 100% 0%, 100% 0%, 100% 70%, 92% 100%, 0% 100%, 0% 100%, 0% 30%);
   clip-path: polygon(8% 0%, 100% 0%, 100% 0%, 100% 70%, 92% 100%, 0% 100%, 0% 100%, 0% 30%);
   background-color: $green;
-  transition: clip-path 0.5s, background-color 0.5s;
+  transition: clip-path 0.5s, background-color 0.5s, color 0.5s;
   &:hover {
     -webkit-clip-path: polygon(8% 0%, 92% 0%, 100% 30%, 100% 70%, 92% 100%, 8% 100%, 0% 70%, 0% 30%);
     -moz-clip-path: polygon(8% 0%, 92% 0%, 100% 30%, 100% 70%, 92% 100%, 8% 100%, 0% 70%, 0% 30%);
