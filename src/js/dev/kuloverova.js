@@ -13,6 +13,8 @@ import burgerMenu from '../components/burger';
 import mainNews from '../components/main-news';
 import description from '../components/description';
 import productBanner from '../components/product-banner';
+import advantages from '../components/advantages';
+import currentVacancies from '../components/current-vacancies';
 
 import { headerScroll, headerDropdown, subMenu } from '../components/header';
 import { scroll } from '../utils/scroll';
@@ -54,6 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch {}
   try {
     productBanner();
+  } catch {}
+  try {
+    advantages();
+  } catch {}
+  try {
+    currentVacancies();
   } catch {}
   try {
     if (window.innerWidth > 768) {
