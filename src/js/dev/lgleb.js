@@ -123,4 +123,56 @@ const Swipers = () => {
       nextEl: '.spheres__swiper-navigation--right'
     }
   });
+
+  const resultsSwiper = new Swiper('.results__swiper', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 10,
+    allowTouchMove: false,
+
+    grid: {
+      rows: 4,
+      fill: 'row'
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        spaceBetween: 40,
+
+        grid: {
+          rows: 1,
+          fill: 'row'
+        }
+      }
+    }
+  });
+
+  const resultsTitleSwiper = new Swiper('.results__title-swiper', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 10,
+    allowTouchMove: false,
+
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    }
+  });
+
+  if (document.querySelector('.results__title-swiper') && document.querySelector('.results__swiper')) {
+    const nextBtn = document.querySelector('.results__swiper-navigation--right'),
+      prevBtn = document.querySelector('.results__swiper-navigation--left');
+
+    nextBtn.addEventListener('click', () => {
+      resultsSwiper.slideNext();
+      resultsTitleSwiper.slideNext();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      resultsSwiper.slidePrev();
+      resultsTitleSwiper.slidePrev();
+    });
+  }
 };

@@ -54,4 +54,11 @@
       }
     }
   }
+
+  @media (max-width: 48em) {
+    & > div {
+      width: 10.4rem;
+      height: 10.4rem;
+    }
+  }
 }
