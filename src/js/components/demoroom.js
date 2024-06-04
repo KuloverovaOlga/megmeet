@@ -22,7 +22,6 @@ demoroomSwiper()
 function demoroomSwiper() {
     const cards = document.querySelectorAll(".demoroom-gallery__slide");
     if (window.innerWidth < 768 && cards.length) {
-        console.log(123);
         cards.forEach((card) => {
             card.classList.add("swiper-slide");
         });
