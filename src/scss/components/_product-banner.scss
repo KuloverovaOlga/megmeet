@@ -35,7 +35,12 @@
     grid-row: span 2;
     height: fit-content;
     position: relative;
+    width: 100%;
     @include small-tablet {
+      overflow: hidden;
+      margin: 0 -2rem;
+      padding: 0 2rem;
+      width: 75rem;
       border-left: unset;
       flex-direction: column;
     }

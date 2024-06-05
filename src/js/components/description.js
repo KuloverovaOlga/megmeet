@@ -17,33 +17,33 @@ const description = () => {
   //     }
   // });
 
-//   const accordionItemHeaders = document.querySelectorAll('.description__accordion-item-header');
+  //   const accordionItemHeaders = document.querySelectorAll('.description__accordion-item-header');
 
-//   accordionItemHeaders.forEach((accordionItemHeader) => {
-//     accordionItemHeader.addEventListener('click', () => {
-//       const currentlyActiveAccordionItemHeader = document.querySelector('.description__accordion-item-header.active');
+  //   accordionItemHeaders.forEach((accordionItemHeader) => {
+  //     accordionItemHeader.addEventListener('click', () => {
+  //       const currentlyActiveAccordionItemHeader = document.querySelector('.description__accordion-item-header.active');
 
-//       if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader === accordionItemHeader) {
-//         return;
-//       }
+  //       if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader === accordionItemHeader) {
+  //         return;
+  //       }
 
-//       if (currentlyActiveAccordionItemHeader) {
-//         currentlyActiveAccordionItemHeader.classList.remove('active');
-//         currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-//       }
+  //       if (currentlyActiveAccordionItemHeader) {
+  //         currentlyActiveAccordionItemHeader.classList.remove('active');
+  //         currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+  //       }
 
-//       accordionItemHeader.classList.add('active');
-//       const accordionItemBody = accordionItemHeader.nextElementSibling;
-//       accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
-//     });
-//   });
+  //       accordionItemHeader.classList.add('active');
+  //       const accordionItemBody = accordionItemHeader.nextElementSibling;
+  //       accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
+  //     });
+  //   });
 
-//   const firstAccordionItemHeader = accordionItemHeaders[0];
-//   if (firstAccordionItemHeader) {
-//     firstAccordionItemHeader.classList.add('active');
-//     const firstAccordionItemBody = firstAccordionItemHeader.nextElementSibling;
-//     firstAccordionItemBody.style.maxHeight = firstAccordionItemBody.scrollHeight + 'px';
-//   }
+  //   const firstAccordionItemHeader = accordionItemHeaders[0];
+  //   if (firstAccordionItemHeader) {
+  //     firstAccordionItemHeader.classList.add('active');
+  //     const firstAccordionItemBody = firstAccordionItemHeader.nextElementSibling;
+  //     firstAccordionItemBody.style.maxHeight = firstAccordionItemBody.scrollHeight + 'px';
+  //   }
 
   const accordionItemHeaders = document.querySelectorAll('.description__accordion-item-header');
 
@@ -82,6 +82,7 @@ const description = () => {
       activeAccordionItemBody.style.maxHeight = activeAccordionItemBody.scrollHeight + 'px';
     }
   }
+
   window.addEventListener('resize', setAccordionBodyHeight);
 };
 
