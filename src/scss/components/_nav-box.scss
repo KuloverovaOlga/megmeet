@@ -13,12 +13,21 @@
       }
     }
   }
-  &--vacancies._first  {
+  &--vacancies._first {
     @include small-tablet {
       margin-top: 18.2rem;
       margin-top: 60rem;
     }
   }
+  &--products._first {
+    & .nav-box__link {
+      color: rgba(255, 255, 255, 0.4);
+      &_black {
+        color: $white;
+      }
+    }
+  }
+
   // .nav-box__list-wrap
 
   &__list-wrap {
