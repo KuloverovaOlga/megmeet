@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
           right: ['close']
         }
       },
-
+      placeFocusBack: false,
       Thumbs: false
     };
 

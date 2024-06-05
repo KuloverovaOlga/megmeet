@@ -305,12 +305,16 @@ const popup = () => {
         ? `${window.location.hash}`
         : null;
 
-      const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`)
-        ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`)
-        : document.querySelector(
-            `[${this.options.attributeOpenButton} = "${classInHash.replace('.', '#')}"]`
-          );
-      if (buttons && classInHash) this.open(classInHash);
+      // const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`)
+      //   ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`)
+      //   : document.querySelector(
+      //       `[${this.options.attributeOpenButton} = "${classInHash.replace('.', '#')}"]`
+      //     );
+
+      //     console.log(buttons)
+      //     console.log(classInHash)
+      if (classInHash) this.open(classInHash);
+      // buttons && 
     }
     _setHash() {
       history.pushState('', '', this.hash);
