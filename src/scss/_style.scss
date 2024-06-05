@@ -25,9 +25,12 @@ body {
   min-height: 100vh;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
+* {
+  // outline:  1px solid red;
+}
 // main
 main {
   flex-grow: 1;

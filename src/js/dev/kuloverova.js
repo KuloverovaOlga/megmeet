@@ -15,6 +15,7 @@ import description from '../components/description';
 import productBanner from '../components/product-banner';
 import advantages from '../components/advantages';
 import currentVacancies from '../components/current-vacancies';
+import newsDetArticle from '../components/news-det-article';
 
 import { headerScroll, headerDropdown, subMenu } from '../components/header';
 import { scroll } from '../utils/scroll';
@@ -62,6 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch {}
   try {
     currentVacancies();
+  } catch {}
+  try {
+    newsDetArticle();
   } catch {}
   try {
     if (window.innerWidth > 768) {
