@@ -44,9 +44,10 @@
         }
 
         svg {
-          width: 4rem;
-          width: auto;
-          height: auto;
+          width: 4rem!important;;
+          // width: auto;
+          // height: auto;
+          height: 0.8rem!important;
           stroke-width: 1px;
           stroke: none;
         }
