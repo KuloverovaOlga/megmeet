@@ -175,4 +175,73 @@ const Swipers = () => {
       resultsTitleSwiper.slidePrev();
     });
   }
+
+  const executionSwiper = new Swiper('.execution__swiper', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 10,
+
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 40
+      }
+    },
+
+    on: {
+      init: (swiper) => {
+        if (window.screen.width > 768) {
+          const progressBar = document.querySelector(
+              '.execution__swiper-progress .swiper-pagination-progress-bar'
+            ),
+            progressLine = document.querySelector(
+              '.execution__swiper-progress .swiper-pagination-progress-line'
+            ),
+            current = document.querySelector('.execution__swiper-current'),
+            all = document.querySelector('.execution__swiper-all');
+
+          all.textContent =
+            swiper.slides.length / 3 >= 10 ? swiper.slides.length / 3 : `0${swiper.slides.length / 3}`;
+
+          current.textContent = `0${swiper.activeIndex + 1}`;
+
+          progressLine.style.width = `${progressBar.clientWidth / all.textContent}px`;
+        }
+      },
+
+      slideChange: (swiper) => {
+        if (window.screen.width > 768) {
+          const progressBar = document.querySelector(
+              '.execution__swiper-progress .swiper-pagination-progress-bar'
+            ),
+            progressLine = document.querySelector(
+              '.execution__swiper-progress .swiper-pagination-progress-line'
+            ),
+            current = document.querySelector('.execution__swiper-current'),
+            all = document.querySelector('.execution__swiper-all');
+
+          if (swiper.activeIndex == 0) {
+            progressLine.style.width = `${progressBar.clientWidth / all.textContent}px`;
+            current.textContent = `0${swiper.activeIndex + 1}`;
+          } else {
+            current.textContent =
+              swiper.activeIndex - 1 >= 10 ? swiper.activeIndex - 1 : `0${swiper.activeIndex - 1}`;
+            progressLine.style.width = `${
+              (progressBar.clientWidth / all.textContent) * current.textContent
+            }px`;
+          }
+        }
+      }
+    },
+
+    pagination: {
+      el: window.screen.width <= 768 && '.execution__swiper-pagination.mobile'
+    },
+
+    navigation: {
+      prevEl: '.execution__swiper-navigation--left',
+      nextEl: '.execution__swiper-navigation--right'
+    }
+  });
 };

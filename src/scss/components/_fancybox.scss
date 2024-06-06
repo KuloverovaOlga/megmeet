@@ -88,3 +88,35 @@
     fill: $black !important;
   }
 }
+
+@media (max-width: 48em) {
+  .fancybox {
+    &__nav {
+      .f-button {
+        &.is-next,
+        &.is-prev {
+          width: 10.4rem;
+          height: 10.4rem;
+
+          svg {
+            width: 5.2rem;
+            stroke-width: 1px;
+          }
+        }
+
+        &.is-next {
+          --f-button-next-pos: 1rem;
+        }
+
+        &.is-prev {
+          --f-button-prev-pos: 1rem;
+        }
+      }
+    }
+  }
+
+  .is-horizontal .fancybox__nav .f-button.is-next,
+  .is-horizontal .fancybox__nav .f-button.is-prev {
+    top: calc(100% - 20rem);
+  }
+}
