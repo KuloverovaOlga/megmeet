@@ -26,11 +26,18 @@
     }
 
     &-slide {
-      background-color: $white;
-      padding-bottom: 2rem;
-      max-width: 39rem;
-      min-height: 50rem;
+      &.swiper-slide {
+        display: flex;
+      }
+      gap: 4rem;
+
+      &--item {
+        background-color: $white;
+        flex: 1;
+        padding-bottom: 2rem;
+      }
     }
+    
   }
 
   &__slide {
@@ -83,10 +90,11 @@
         justify-content: space-between;
         width: 100%;
       }
-
       &-slide {
-        max-width: none;
-        min-height: 0;
+        &.swiper-slide {
+          flex-direction: column;
+        }
+        gap: 2rem;
       }
     }
 
