@@ -57,3 +57,10 @@ $('.demoroom-gallery__show-more').on('click', function(){
         $content.switchClass("demoroom-gallery__swiper-show", "demoroom-gallery__swiper-hiden", 400);
     };
 })
+
+$('.current-vacancies__link').on('click',function(){
+    $('.current-vacancies__right-slide-content-box').toggleClass('open')
+})
+$('.vacancies-det__link').on('click',function(){
+    $('.vacancies-det__content-box').toggleClass('open')
+})

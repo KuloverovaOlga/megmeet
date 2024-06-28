@@ -54,17 +54,19 @@ const description = () => {
       );
 
       if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader === accordionItemHeader) {
-        return;
+        if (currentlyActiveAccordionItemHeader) {
+          currentlyActiveAccordionItemHeader.classList.remove('active');
+          currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+        }
+      } else {
+        if (currentlyActiveAccordionItemHeader) {
+          currentlyActiveAccordionItemHeader.classList.remove('active');
+          currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+        }
+        accordionItemHeader.classList.add('active');
+        const accordionItemBody = accordionItemHeader.nextElementSibling;
+        accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
       }
-
-      if (currentlyActiveAccordionItemHeader) {
-        currentlyActiveAccordionItemHeader.classList.remove('active');
-        currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-      }
-
-      accordionItemHeader.classList.add('active');
-      const accordionItemBody = accordionItemHeader.nextElementSibling;
-      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
     });
   });
 

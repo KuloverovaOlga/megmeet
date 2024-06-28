@@ -23,10 +23,23 @@ export function headerDropdown() {
     function mouseenter() {
       dropdown.classList.add('active');
       $(dropdownInner).slideDown();
+      
+      if (window.innerWidth >= 768) {
+        dropdown.removeEventListener('mouseleave', mouseleave)
+        setTimeout(() => {
+          dropdown.addEventListener('mouseleave', mouseleave);
+        }, 200);
+      }
     }
     function mouseleave() {
       dropdown.classList.remove('active');
       $(dropdownInner).slideUp();
+      if (window.innerWidth >= 768) {
+        dropdown.removeEventListener('mouseenter', mouseenter)
+        setTimeout(() => {
+          dropdown.addEventListener('mouseenter', mouseenter);
+        }, 200);
+      }
     }
 
     function showContent() {
@@ -36,7 +49,6 @@ export function headerDropdown() {
         dropdown.classList.remove('active');
       } else {
         dropdown.addEventListener('mouseenter', mouseenter);
-        dropdown.addEventListener('mouseleave', mouseleave);
       }
     }
 

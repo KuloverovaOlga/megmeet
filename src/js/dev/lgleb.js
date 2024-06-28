@@ -130,15 +130,15 @@ const Swipers = () => {
     spaceBetween: 10,
     allowTouchMove: false,
 
-    grid: {
-      rows: 4,
-      fill: 'row'
-    },
+    // grid: {
+    //   rows: 4,
+    //   fill: 'row'
+    // },
 
     breakpoints: {
       768: {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
         spaceBetween: 40,
 
         grid: {
