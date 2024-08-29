@@ -51,11 +51,11 @@
       z-index: 1;
 
       &.right-background {
-        background-image: url(../../assets/images/automatics-item-background-right.svg);
+        background-image: url(./assets/images/automatics-item-background-right.svg);
       }
 
       &.left-background {
-        background-image: url(../../assets/images/automatics-item-background-left.svg);
+        background-image: url(./assets/images/automatics-item-background-left.svg);
       }
 
       &--img {
@@ -83,11 +83,11 @@
       z-index: 2;
 
       &.right-background {
-        background-image: url(../../assets/images/automatics-descr-background-right.svg);
+        background-image: url(./assets/images/automatics-descr-background-right.svg);
       }
 
       &.left-background {
-        background-image: url(../../assets/images/automatics-descr-background-left.svg);
+        background-image: url(./assets/images/automatics-descr-background-left.svg);
       }
     }
 
@@ -158,7 +158,7 @@
 
         &.right-background,
         &.left-background {
-          background-image: url(../../assets/images/automatics-item-background-mobile.svg);
+          background-image: url(./assets/images/automatics-item-background-mobile.svg);
         }
       }
 
